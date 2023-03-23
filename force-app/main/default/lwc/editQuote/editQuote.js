@@ -25,18 +25,11 @@ export default class EditQuote extends LightningElement {
   }
 
   startDateChanged(event) {
-    // let quoteData = JSON.parse(JSON.stringify(this.quoteData));
-    // console.log(quoteData, event.target.value);
-    // quoteData.startDate = event.target.value;
-    // this.quoteData = quoteData;
     this.quoteData.startDate = event.target.value;
   }
 
   endDateChanged(event) {
-    let quoteData = JSON.parse(JSON.stringify(this.quoteData));
-    console.log(quoteData, event.target.value);
-    quoteData.endDate = event.target.value;
-    this.quoteData = quoteData;
+    this.quoteData.endDate = event.target.value;
   }
 
   saveQuote(event) {
@@ -49,8 +42,6 @@ export default class EditQuote extends LightningElement {
           variant: "success"
         });
         this.dispatchEvent(evt);
-        // console.log(data);
-        // this.quoteData = data;
       })
       .catch((err) => {
         throw err;
